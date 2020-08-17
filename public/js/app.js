@@ -14,7 +14,7 @@ function inputEvent (){
     
     const location = search.value
     messageOne.innerText = 'Loading...'
-    fetch(`http://localhost:3000/weather?address=${location}`).then((response) => {
+    fetch(`/weather?address=${location}`).then((response) => {
         const data = response.json()
         return data
     }).then((data) => {
