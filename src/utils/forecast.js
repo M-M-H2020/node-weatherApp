@@ -15,11 +15,13 @@ module.exports = ({latitude,longitude,location} = {}, unit) => {
 			}
 
 			const { current } = data;
-
+			let icon = current.weather_icons[0]
+			
 			const forecastData = `${current.weather_descriptions[0]}.\nIt is currently ${current.temperature} ${unitName} out. It feels like ${current.feelslike} ${unitName} out.`;
 			return {
 				forecastData,
-				location:location
+				location:location,
+				icon
 			}
 		})
 		.catch((err) => {

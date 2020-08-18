@@ -71,7 +71,8 @@ app.get('/weather',(req,res) => {
 			res.send({
 				forecastData:data.forecastData,
 				location:data.location,
-				address:req.query.address
+				address:req.query.address,
+				icon:data.icon
 			})
 		}).catch((error) => {
 			res.send({error})
